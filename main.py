@@ -23,7 +23,13 @@ class Tweet(BaseModel):
 
 @app.post("/clasification/")
 async def create_item(tweet: Tweet):
-
+    """
+    # Esta es una api que clasifica tweets a favor o en contra del gobierno de Amlo
+    ### Hola 🖐 funciona enviandole un json de esta forma:
+    {\n
+        "texto": "Tweet a clasificar"
+    }\n
+    """
     # Convertimos el input a Tdfidf
     prediccionEjemplo = Tfidf_vect.transform([tweet.texto])
 

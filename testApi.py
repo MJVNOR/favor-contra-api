@@ -1,6 +1,9 @@
 import requests
+import sys
 
-review = {"texto": "Viva amlo"}
+tweet = " ".join(sys.argv[1:])
+print(tweet)
+review = {"texto": tweet}
 resp = requests.post(
     "https://favor-contra-api.herokuapp.com/clasification", json=review
 )
